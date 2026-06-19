@@ -1,4 +1,4 @@
-# 🐧 Penguin Clustering Project
+# 🐧 Clustering Antarctic Penguin Species
 
 ## 📌 Overview
 This project applies K-Means clustering to penguin data. It includes two parts: unsupervised clustering and validation using real species labels.
