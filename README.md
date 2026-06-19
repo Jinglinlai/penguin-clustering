@@ -1,56 +1,99 @@
-# 🐧 Penguin Clustering Project
-
-## Overview
-This project applies unsupervised machine learning to a dataset of penguin measurements collected in Antarctica. The goal is to discover natural groupings in the data without using species labels.
-
-We use **K-Means clustering** to group penguins based on physical characteristics and then visualize the clusters using **PCA (Principal Component Analysis)**.
 
 ---
 
-## Dataset
-The dataset contains measurements of penguins:
+## 🟡 Project 1: Unsupervised Exploration
 
-- Culmen length (mm)
-- Culmen depth (mm)
-- Flipper length (mm)
-- Body mass (g)
-- Sex
+### Goal
+Understand whether penguin measurements naturally form groups without using any labels.
 
----
+### Methods
+- K-Means clustering
+- Elbow method (inertia vs K)
+- PCA for 2D visualization
 
-## Methods Used
+### Outcome
+- Identified potential cluster structure in the data
+- Observed natural separation patterns in penguin measurements
 
-### 1. Data Preprocessing
-- Handled categorical variable (`sex`) using one-hot encoding
-- Standardized features using `StandardScaler`
-
-### 2. Finding Optimal Clusters
-- Used the **Elbow Method**
-- Tested K values from 1 to 10
-- Selected K = 4 based on inertia plot
-
-### 3. K-Means Clustering
-- Applied K-Means algorithm to group penguins
-- Assigned cluster labels to each data point
-
-### 4. Cluster Analysis
-- Computed mean feature values per cluster
-- Interpreted clusters based on biological characteristics
-
-### 5. Visualization
-- Reduced dimensions using **PCA (2D)**
-- Visualized clusters in a scatter plot
+### Limitation
+- No ground truth available to evaluate clustering quality
 
 ---
 
-## Key Insight
-The clustering reveals natural groupings in penguin physical characteristics that likely correspond to real species differences, even though species labels were not used during training.
+## 🟢 Project 2: Clustering Validation (Improved Version)
+
+### Goal
+Evaluate how well unsupervised clustering aligns with real penguin species.
+
+### Methods
+- Feature selection (culmen length, depth, flipper length, body mass)
+- Missing value handling
+- Standardization (StandardScaler)
+- K-Means clustering (K = 3)
+- Comparison with true species labels
+- Cluster purity score
+- PCA visualization
+
+### Outcome
+- Clusters strongly correspond to real species groups:
+  - Adelie
+  - Gentoo
+  - Chinstrap
+- Demonstrates that morphological features encode biological structure
 
 ---
 
-## Technologies Used
+## 📊 Key Insight
+
+Even without labels, K-Means was able to recover meaningful biological groupings.
+
+However, evaluation against true species shows:
+- Some overlap between species exists
+- Certain species are more easily separable than others
+
+This highlights both the **power and limitations of unsupervised learning**.
+
+---
+
+## 📈 Example Visualizations
+
+- PCA plot of K-Means clusters (unsupervised result)
+- PCA plot of true species distribution (ground truth comparison)
+
+---
+
+## 🧠 Skills Demonstrated
+
+- Data preprocessing (cleaning, missing values)
+- Feature scaling
+- Unsupervised learning (K-Means clustering)
+- Model selection (Elbow method)
+- Dimensionality reduction (PCA)
+- Model evaluation using external labels
+- Data visualization
+
+---
+
+## 🛠️ Tools Used
+
 - Python
 - Pandas
 - NumPy
 - Scikit-learn
 - Matplotlib
+
+---
+
+## 🚀 Key Takeaway
+
+This project demonstrates a full machine learning workflow:
+
+> From discovering hidden structure in data → to validating it against real-world labels.
+
+It shows how unsupervised learning can uncover meaningful patterns, but also how important evaluation is when ground truth becomes available.
+
+---
+
+## 👤 Author
+
+Personal machine learning project exploring clustering, dimensionality reduction, and model validation using real biological data.
