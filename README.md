@@ -16,8 +16,6 @@ The dataset contains measurements of penguins:
 - Body mass (g)
 - Sex
 
-Source: Palmer Station, Antarctica LTER (Dr. Kristen Gorman)
-
 ---
 
 ## Methods Used
